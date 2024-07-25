@@ -1,0 +1,105 @@
+
+.nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  padding: 1rem;
+}
+
+
+.logo{
+  margin-left: 3rem;
+}
+.row-menu-container {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-right: 3rem;
+}
+
+.row-menu-container ul {
+  gap: 2rem;
+}
+.row-menu-container ul> li {
+  transition: var(--transition);
+
+}
+
+.row-menu-container ul li:hover {
+  color: var(--blue);
+}
+
+.row-menu-container ul {
+  list-style: none;
+}
+
+.logo img {
+  width: 7rem;
+}
+
+
+/*   toggle On  */
+.column-menu-container {
+  color: var(--black);
+  background-color: white;
+  padding: 1rem;
+  transition: var(--transition);
+}
+
+.column-menu-container ul{
+  gap: 2rem;
+  list-style: none;
+  transition: var(--transition);
+  margin-left: 1rem;
+}
+.column-menu-container ul> li{
+  transition: var(--transition);
+  position: relative;
+  width: 100%;
+}
+.column-menu-container ul> li::after{
+  content: "";
+  position: absolute;
+  border: 0.1px solid rgb(247, 247, 247);
+  width: 140%;
+  left: -20%;
+  bottom: -85%;
+}
+
+.column-menu-container ul li:hover {
+  color: var(--blue);
+}
+/*   navbar menu  */
+.navbar-menu {
+  display: none;
+  opacity: 0;
+  transition: var(--transition);
+  position: relative;
+  margin-right: 1rem;
+}
+
+.navbar-menu .toggle-btn {
+  background: transparent;
+}
+
+.navbar-menu .toggle-btn:first-child {
+  color: white;
+}
+
+@media (max-width: 780px) {
+  .navbar-menu {
+    display: flex;
+    opacity: 1;
+  }
+
+  .row-menu-container {
+    display: none;
+  }
+}

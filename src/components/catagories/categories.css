@@ -1,0 +1,35 @@
+
+.categories-content{
+  gap: 3rem;
+}
+
+.categories-header{
+  gap: 0.6rem;
+}
+
+.catagory-items{
+  gap: 2rem;
+}
+
+.category{
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgb(61, 61, 61);
+}
+
+.category img{
+  transition: var(--transition);
+}
+.category img:hover{
+  scale: 0.9;
+}
+
+@media (min-width: 760px){
+  .catagory-items{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 4rem;
+  }
+  
+}

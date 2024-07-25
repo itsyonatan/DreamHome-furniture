@@ -1,0 +1,16 @@
+.slick-dots li button::before{
+  font-size: 5px!important;
+  color: #000000!important;
+}
+
+.gallery-header{
+  margin-bottom: 3rem;
+}
+
+.gallery-items{
+  overflow: hidden;
+}
+
+.gallery-item{
+  max-width: 300px;
+}
