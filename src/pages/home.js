@@ -1,10 +1,10 @@
 import Categories from "../components/catagories/categories"
 import Creativity from "../components/creativity/creativity"
-import Footer from "../components/footer/footer"
 import Furniture from "../components/furniture/furniture"
 import Gallery from "../components/gallery/gallery"
 import Hero from "../components/hero/hero"
 import Services from "../components/services/services"
+import Testimonials from "../components/testimonials/testimonials"
 
 export default function Home() {
   
@@ -14,9 +14,9 @@ export default function Home() {
       <Furniture />
       <Creativity />
       <Categories />
+      <Testimonials />
       <Services />
       <Gallery />
-      <Footer />
     </div>
   )
 }

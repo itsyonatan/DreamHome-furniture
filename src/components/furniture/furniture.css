@@ -3,23 +3,28 @@
 }
 
 .furniture-header {
+  position: absolute;
   font-size: 5rem;
   font-weight: 700;
-  color: rgb(216, 216, 216);
-  margin: 0;
+  color: rgb(233, 233, 233);
+  visibility: hidden;
+  bottom: 40%;
+  left: -25%;
+  z-index: -1;
 }
 
-.furniture-header {
-  visibility: hidden;
-  height: 0;
+.furniture-sub-header{
+  position: relative;
 }
 
 .left-furniture-content {
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   gap: 2rem;
+  margin: 0 1rem;
 }
 
-@media (min-width: 760px) {
+
+@media (min-width: 860px) {
   .furniture-content {
     flex-direction: row;
   }
@@ -42,10 +47,5 @@
   }
   .furniture-header {
     visibility: visible;
-    font-size: 5rem;
-    font-weight: 700;
-    color: rgb(216, 216, 216);
-    margin: 0 0 -5rem -3rem;
-    height: inherit;
   }
 }

@@ -1,14 +1,14 @@
 import "./categories.css"
 import images from "../../data/images"
 
-
 export default function Categories() {
 
   return (
-    <div className="categories container">
+    <div className="categories container flexCenter">
+      <div className="background-overlay"></div>
       <div className="categories-content flexColCenter">
         <div className="categories-header flexColCenter">
-          <p className="sectionText">featured categories</p>
+          <p className="sectionText categories-title">featured categories</p>
           <p className="categories-sub-header text-cap">unique & inspiring crafting</p>
         </div>
         <div className="catagory-items flexColCenter">

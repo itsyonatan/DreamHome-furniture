@@ -18,33 +18,33 @@ export default function Footer() {
           <h2 className="quick-link-header">quick links</h2>
           <ul className="links flexColStart">
             <li className="link"><Link to="/">home</Link></li>
-            <li className="link"><Link to="/">about us</Link></li>
-            <li className="link"><Link to="/">products</Link></li>
-            <li className="link"><Link to="/">blog</Link></li>
-            <li className="link"><Link to="/">contact</Link></li>
+            <li className="link"><Link to="/about">about us</Link></li>
+            <li className="link"><Link to="/products">products</Link></li>
+            <li className="link"><Link to="/blog">blog</Link></li>
+            <li className="link"><Link to="/contact">contact</Link></li>
           </ul>
         </div>
         <div className="footer-contact flexColStart">
           <h2 className="contact-header">contact</h2>
           <div className="contact-items flexColStart">
             <a href="tel:+251931480409">
-              <span><FaPhoneAlt size={20}/></span>
+              <span><FaPhoneAlt size={20} /></span>
               <span>+251 931 480 409</span>
             </a>
             <a href="mailto:yonatanadera@gmail.com">
-              <span><MdEmail size={22}/></span>
+              <span><MdEmail size={22} /></span>
               <span>yonatanadera@gmail.com</span>
             </a>
-            <a href="#">
-              <span><FaLocationDot size={20}/></span>
+            <a href="mailto:yonatanadera@gmail.com">
+              <span><FaLocationDot size={20} /></span>
               <span>wesen street, addis abeba, ethiopia</span>
             </a>
             <div className="social text-cap">
               <h2 className="social-header">follow us</h2>
               <div className="social-media-link flexCenter">
-                <FaFacebook size={22}/>
-                <FaSquareXTwitter size={22}/>
-                <FaInstagramSquare size={22}/>
+                <FaFacebook size={22} />
+                <FaSquareXTwitter size={22} />
+                <FaInstagramSquare size={22} />
               </div>
             </div>
           </div>

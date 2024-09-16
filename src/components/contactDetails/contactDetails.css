@@ -1,0 +1,32 @@
+.contactDetails {
+    padding: 2rem;
+}
+
+.contactDetails-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.contact-header {
+    position: absolute;
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgb(233, 233, 233);
+    visibility: hidden;
+    bottom: -25%;
+    left: -25%;
+    z-index: -1;
+}
+
+.contact-sub-header{
+    position: relative;
+}
+
+@media (min-width: 980px) {
+    .contact-header {
+        visibility: visible;
+    }
+}

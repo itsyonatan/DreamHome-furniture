@@ -1,11 +1,40 @@
-import { useState } from "react"
 import './nav.css'
-import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import images from "../../data/images"
+import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { MenuToggle } from "../menuToggle/menutoggle";
+
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 }
+  }
+};
+
+const menuVars = {
+  initial: {
+    scaleY: 0,
+  },
+  animate: {
+    scaleY: 1,
+    transition: {
+      duration: 0.1,
+      //ease: [0.12, 0, 0.39, 0],
+    },
+  },
+  exit: {
+    scaleY: 0,
+    transition: {
+      duration: 0.2,
+      //ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
 export default function Nav() {
-  const [toggleOn, setToggleOn] = useState(false);
+  const [isOpen, toggleOpen] = useCycle(false, true);
 
   const Menu = () => {
     return (
@@ -19,7 +48,7 @@ export default function Nav() {
     )
   }
   return (
-    <div className="nav">
+    <motion.div className="nav" animate={isOpen ? "open" : "closed"}>
       <div className="nav-content">
         <div className="logo">
           <Link to="/"><img src={images.logo} alt="logo" className="logo-image" /></Link>
@@ -30,20 +59,28 @@ export default function Nav() {
           </ul>
         </div>
         <div className="navbar-menu">
-          {toggleOn ?
-            <button className="toggle-btn" onClick={() => setToggleOn(false)} ><FaTimes size={26} /></button>
-            :
-            <button className="toggle-btn" onClick={() => setToggleOn(true)}><FaBars size={26} /></button>
-
-          }
+          <MenuToggle toggle={() => toggleOpen()} isOpen={isOpen} />
         </div>
       </div>
-      {toggleOn && (<div className="column-menu-container">
-        <ul className="flexColStart text">
-          <Menu />
-        </ul>
-      </div>)
-      }
-    </div>
+      <AnimatePresence>
+        {isOpen && (<motion.div className="column-menu-container"
+          variants={menuVars}
+          initial="initial"
+          animate="animate"
+          exit="exit" >
+          <ul className="flexColStart text"
+            onClick={() => toggleOpen()}>
+            <Menu />
+          </ul>
+        </motion.div>)
+        }
+      </AnimatePresence>
+    </motion.div>
   )
-}      
+}
+
+/*<motion.li variants={itemsVariants}><Link to="/">Home</Link></motion.li>
+<motion.li variants={itemsVariants}><Link to="/about">About Us</Link></motion.li>
+<motion.li variants={itemsVariants}><Link to="/products">Products</Link></motion.li>
+<motion.li variants={itemsVariants}><Link to="/blog">blog</Link></motion.li>
+<motion.li variants={itemsVariants}><Link to="/contact">contact</Link></motion.li>*/

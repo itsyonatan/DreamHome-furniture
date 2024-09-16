@@ -1,4 +1,4 @@
-import logo from "../assets/logo-2.jpg"
+import logo from "../assets/logo.png"
 import furniture from "../assets/owp-dreamhome-img-2.jpg"
 import creativity from "../assets/owp-dreamhome-img-1.jpg"
 import decoration from "../assets/decoration.jpg"

@@ -103,7 +103,7 @@ body {
 /*  Text  */
 .text {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.8rem;
   color: var(--gray);
 }
@@ -111,8 +111,8 @@ body {
 /* section */
 .sectionText {
   color: var(--black);
-  font-weight: 500;
-  font-size: 2rem;
+  font-weight: 600;
+  font-size: 1.7rem;
   font-family: "Vollkorn", serif;
   text-transform: capitalize;
 }
@@ -178,6 +178,7 @@ textarea {
   border-radius: 6px;
   background: transparent;
   transition: var(--transition);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.514);
 }
 
 .white-btn:hover {
@@ -207,5 +208,12 @@ textarea {
   }
   .container {
     margin: 0 auto 5rem auto;
+  }
+  .text {
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
+  .sectionText {
+    font-size: 2rem;
   }
 }

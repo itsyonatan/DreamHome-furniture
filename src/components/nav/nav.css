@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 44;
 }
 .nav-content {
   display: flex;
@@ -19,8 +20,10 @@
 }
 .row-menu-container {
   color: var(--white);
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   margin-right: 3rem;
 }
 
@@ -29,7 +32,6 @@
 }
 .row-menu-container ul> li {
   transition: var(--transition);
-
 }
 
 .row-menu-container ul li:hover {
@@ -41,16 +43,17 @@
 }
 
 .logo img {
-  width: 7rem;
+  width: 10rem;
 }
-
 
 /*   toggle On  */
 .column-menu-container {
   color: var(--black);
-  background-color: white;
+  background-color: rgb(235, 235, 235);
   padding: 1rem;
   transition: var(--transition);
+  transform-origin: top;
+  
 }
 
 .column-menu-container ul{
@@ -58,19 +61,22 @@
   list-style: none;
   transition: var(--transition);
   margin-left: 1rem;
+  text-align: center;
 }
 .column-menu-container ul> li{
   transition: var(--transition);
   position: relative;
   width: 100%;
+  font-weight: 700;
 }
 .column-menu-container ul> li::after{
   content: "";
   position: absolute;
   border: 0.1px solid rgb(247, 247, 247);
-  width: 140%;
+  width: 130%;
   left: -20%;
-  bottom: -85%;
+  bottom: -55%;
+  overflow: hidden;
 }
 
 .column-menu-container ul li:hover {
@@ -93,7 +99,11 @@
   color: white;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 860px) {
+  .logo{
+    margin-left: 1.5rem;
+  }
+
   .navbar-menu {
     display: flex;
     opacity: 1;
