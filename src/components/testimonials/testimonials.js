@@ -11,10 +11,10 @@ const Testimonials = () => {
     dots: true,
     autoplay: true,
     infinite: true,
-    speed: 200,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true
+    arrows: false
   };
 
   return (
@@ -28,13 +28,13 @@ const Testimonials = () => {
           {
             data.testimonials.map((testimonial, index) => {
               return (
-                <div className="testimonials-item text__light" key={index}>
+                <div className="testimonials-item" key={index}>
                   <p className="text">
                     <span><FaQuoteLeft /></span>
                     &nbsp;
                     {testimonial.text} <span>&nbsp; <FaQuoteRight /></span>
                   </p>
-                  <p className="text__upper text fw__5 ls__2">{testimonial.name}</p>
+                  <p className="text-upper testimonial-name">{testimonial.name}</p>
                 </div>
               )
             })

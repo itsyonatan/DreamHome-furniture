@@ -10,11 +10,11 @@ const Path = (props) => (
   />
 );
 
-export const MenuToggle = ({ toggle, isOpen }) => (
+export const MenuToggle = ({ setToggleOn, toggleOn }) => (
   <motion.button
     style={{background: "transparent"}}
-    animate={isOpen ? "open" : "closed"}
-    onClick={toggle}>
+    animate={toggleOn ? "open" : "closed"}
+    onClick={()=>setToggleOn(!toggleOn)}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{

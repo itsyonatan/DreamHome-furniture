@@ -1,6 +1,6 @@
 .slick-dots li button::before {
-  font-size: 15px !important;
-  color: #fff !important;
+  font-size: 6px !important;
+  color: #646464 !important;
 }
 
 .testimonials-content {
@@ -13,6 +13,10 @@
 }
 
 .testimonials-item .text {
-  font-size: 1.4rem;
   margin: 2rem 0;
+}
+
+.testimonials-item .testimonial-name{
+  font-size: 1;
+  font-weight: 600;
 }

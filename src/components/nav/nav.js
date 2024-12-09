@@ -1,8 +1,9 @@
 import './nav.css'
 import { Link } from "react-router-dom";
 import images from "../../data/images"
-import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { MenuToggle } from "../menuToggle/menutoggle";
+import { useState } from 'react';
 
 const variants = {
   open: {
@@ -16,9 +17,11 @@ const variants = {
 const menuVars = {
   initial: {
     scaleY: 0,
+    opacity: 0,
   },
   animate: {
     scaleY: 1,
+    opacity: 1,
     transition: {
       duration: 0.1,
       //ease: [0.12, 0, 0.39, 0],
@@ -26,15 +29,16 @@ const menuVars = {
   },
   exit: {
     scaleY: 0,
+    opacity: 0,
     transition: {
-      duration: 0.2,
+      duration: 0.1,
       //ease: [0.22, 1, 0.36, 1],
     },
   },
 };
 
 export default function Nav() {
-  const [isOpen, toggleOpen] = useCycle(false, true);
+  const [toggleOn, setToggleOn] = useState(false);
 
   const Menu = () => {
     return (
@@ -48,7 +52,8 @@ export default function Nav() {
     )
   }
   return (
-    <motion.div className="nav" animate={isOpen ? "open" : "closed"}>
+    <AnimatePresence>
+    <motion.div className="nav" animate={toggleOn ? "open" : "closed"}>
       <div className="nav-content">
         <div className="logo">
           <Link to="/"><img src={images.logo} alt="logo" className="logo-image" /></Link>
@@ -59,28 +64,22 @@ export default function Nav() {
           </ul>
         </div>
         <div className="navbar-menu">
-          <MenuToggle toggle={() => toggleOpen()} isOpen={isOpen} />
+          <MenuToggle setToggleOn={setToggleOn} toggleOn={toggleOn} />
         </div>
       </div>
-      <AnimatePresence>
-        {isOpen && (<motion.div className="column-menu-container"
+        {toggleOn && (<motion.div className="column-menu-container"
+          key="exit"
           variants={menuVars}
           initial="initial"
           animate="animate"
           exit="exit" >
           <ul className="flexColStart text"
-            onClick={() => toggleOpen()}>
+            onClick={() => setToggleOn(false)}>
             <Menu />
           </ul>
         </motion.div>)
         }
-      </AnimatePresence>
     </motion.div>
+    </AnimatePresence>
   )
 }
-
-/*<motion.li variants={itemsVariants}><Link to="/">Home</Link></motion.li>
-<motion.li variants={itemsVariants}><Link to="/about">About Us</Link></motion.li>
-<motion.li variants={itemsVariants}><Link to="/products">Products</Link></motion.li>
-<motion.li variants={itemsVariants}><Link to="/blog">blog</Link></motion.li>
-<motion.li variants={itemsVariants}><Link to="/contact">contact</Link></motion.li>*/
